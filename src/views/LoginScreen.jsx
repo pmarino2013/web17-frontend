@@ -11,6 +11,7 @@ function LoginScreen() {
     const {
         register,
         handleSubmit,
+        isSubmitting,
     formState: { errors },
       } = useForm()
 
@@ -45,7 +46,13 @@ function LoginScreen() {
     
             <div className='flex p-2'>
 
-            <button className='bg-blue-500 w-100 text-white p-2 rounded-md'>Login</button>
+            <button
+              type="submit"
+              disabled={isSubmitting}
+              className={`bg-blue-500 w-100 text-white p-2 rounded-md transition-opacity duration-200 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'}`}
+            >
+              {isSubmitting ? 'Enviando...' : 'Login'}
+            </button>
             </div>
         </form>
         {!response?.ok && response && (
