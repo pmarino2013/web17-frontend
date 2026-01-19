@@ -1,18 +1,99 @@
-# React + Vite
+# Frontend Web17
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación frontend construida con **React** y **Vite**, que proporciona una interfaz de usuario moderna y responsiva para la gestión de autenticación de usuarios.
 
-Currently, two official plugins are available:
+## 📋 Descripción del Proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Frontend web17 es una aplicación de una sola página (SPA) que implementa un sistema de autenticación y autorización. La aplicación permite a los usuarios:
 
-## React Compiler
+- **Autenticación**: Login y logout de usuarios
+- **Gestión de sesiones**: Manejo seguro de tokens y sesiones
+- **Interfaz intuitiva**: Diseño responsivo con Tailwind CSS
+- **Componentes reutilizables**: Arquitectura modular con componentes React
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## 🛠️ Tecnologías Utilizadas
 
-Note: This will impact Vite dev & build performances.
+- **React 19.2.0** - Librería frontend
+- **Vite 7.2.4** - Bundler y servidor de desarrollo
+- **React Router 7.12.0** - Enrutamiento de la aplicación
+- **React Hook Form 7.71.1** - Gestión de formularios
+- **Tailwind CSS 4.1.18** - Estilos y diseño responsivo
+- **ESLint** - Linting y análisis de código
 
-## Expanding the ESLint configuration
+## 📁 Estructura del Proyecto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```
+src/
+├── components/
+│   ├── AlertApp.jsx      - Componente para mostrar alertas
+│   └── LogoutApp.jsx     - Componente de cierre de sesión
+├── views/
+│   ├── HomeScreen.jsx    - Pantalla principal
+│   └── LoginScreen.jsx   - Pantalla de autenticación
+├── helpers/
+│   └── auth.js           - Funciones de autenticación
+├── App.jsx               - Componente raíz
+├── main.jsx              - Punto de entrada
+├── App.css               - Estilos globales
+└── index.css             - Estilos base
+```
+
+## 🚀 Primeros Pasos
+
+### Requisitos
+
+- Node.js (versión 16 o superior)
+- npm o yarn
+
+### Instalación
+
+```bash
+npm install
+```
+
+### Desarrollo
+
+```bash
+npm run dev
+```
+
+El servidor de desarrollo estará disponible en `http://localhost:5173`
+
+### Build
+
+```bash
+npm run build
+```
+
+Genera la versión de producción optimizada en la carpeta `dist/`.
+
+### Preview
+
+```bash
+npm run preview
+```
+
+Previsualizacion local de la versión build.
+
+### Lint
+
+```bash
+npm lint
+```
+
+Ejecuta ESLint para validar la calidad del código.
+
+## 🔐 Autenticación
+
+La aplicación implementa un sistema de autenticación que:
+
+- Valida credenciales de usuario
+- Gestiona tokens de sesión
+- Proporciona protección de rutas autenticadas
+- Maneja logout y cierre de sesión
+
+## 📝 Notas
+
+- React Compiler está habilitado para mejora de rendimiento
+- La aplicación utiliza ESLint para mantener estándares de código
+- Se recomienda usar TypeScript en futuros desarrollos
