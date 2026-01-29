@@ -3,6 +3,7 @@ import { logIn } from "../helpers/auth";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AlertApp from "../components/AlertApp";
+import BtnGoogleSigIn from "../components/BtnGoogleSigIn";
 function LoginScreen() {
   const navigate = useNavigate();
   const [response, setResponse] = useState(null);
@@ -61,6 +62,7 @@ function LoginScreen() {
         </div>
       </form>
       {!response?.ok && response && <AlertApp message={response?.message} />}
+      <BtnGoogleSigIn />
     </div>
   );
 }
