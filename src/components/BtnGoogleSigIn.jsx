@@ -1,4 +1,3 @@
-import React from "react";
 import { loginWithGoogle } from "../helpers/authGoogle";
 
 const BtnGoogleSigIn = () => {

@@ -1,12 +1,6 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyD1F56FU1rYYRt8NAg6GxJESAziXn8Unq4",
   authDomain: "auth-ac5fe.firebaseapp.com",
@@ -21,22 +15,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
-
-// 3. Función para iniciar sesión
-// const loginBtn = document.getElementById("loginBtn");
-
-// loginBtn.addEventListener('click', () => {
-//   signInWithPopup(auth, provider)
-//     .then((result) => {
-//       // Aquí obtienes los datos del usuario
-//       const user = result.user;
-//       console.log("Bienvenido:", user.displayName);
-//       document.getElementById('userProfile').innerHTML = `Hola, ${user.displayName}`;
-//     })
-//     .catch((error) => {
-//       console.error("Error al iniciar sesión:", error.message);
-//     });
-// });
 
 export const loginWithGoogle = () => {
   signInWithPopup(auth, provider)
