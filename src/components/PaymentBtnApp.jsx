@@ -2,18 +2,18 @@ import React, { useEffect, useState } from "react";
 import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import { pagarMercadoPago } from "../helpers/payment";
 
-const PaymentBtnApp = () => {
+const PaymentBtnApp = ({ datos }) => {
   initMercadoPago("APP_USR-f3bb0534-996a-4766-8856-4b54b18a81cc");
-  const [producto, setProducto] = useState({
-    title: "CÁMARA LOGI",
-    cantidad: 1,
-    precio: 150000,
-  });
+
   const [idReference, setIdReference] = useState(null);
   // Inicializa Mercado Pago con tu Public Key
 
   useEffect(() => {
-    pagarMercadoPago(producto).then((response) => {
+    pagarMercadoPago({
+      title: "Carrito de compras",
+      cantidad: 1,
+      precio: datos.total,
+    }).then((response) => {
       console.log(response);
       setIdReference(response.id);
     });
@@ -28,15 +28,17 @@ const PaymentBtnApp = () => {
         marginTop: "50px",
       }}
     >
-      <h1>Botón de Pago</h1>
-      <p>Haz clic en el botón para realizar el pago.</p>
+      {/* <h1>Botón de Pago</h1>
+      <p>Haz clic en el botón para realizar el pago.</p> */}
       {/* Renderiza el botón de pago */}
       <div style={{ width: "300px" }}>
-        <Wallet
-          initialization={{
-            preferenceId: idReference,
-          }}
-        />
+        {datos && (
+          <Wallet
+            initialization={{
+              preferenceId: idReference,
+            }}
+          />
+        )}
       </div>
     </div>
   );
