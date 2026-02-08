@@ -7,6 +7,7 @@ export const pagarMercadoPago = async (datos) => {
       headers: {
         "Content-Type": "application/json",
       },
+      credentials: "include",
       body: JSON.stringify(datos),
     });
 
