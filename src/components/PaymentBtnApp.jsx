@@ -1,23 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
-import { pagarMercadoPago } from "../helpers/payment";
+
+//importar función petición a sercidor payment
 
 const PaymentBtnApp = ({ datos }) => {
   const [idReference, setIdReference] = useState(null);
-  // Inicializa Mercado Pago con tu Public Key
-  const publicKey = import.meta.env.VITE_MP_PUBLIC_KEY;
-  // initMercadoPago("APP_USR-f3bb0534-996a-4766-8856-4b54b18a81cc");
+
+  // Inicializa Mercado Pago con tu Public Key usando variables de entorno
+  const publicKey;
+
   initMercadoPago(publicKey);
 
   useEffect(() => {
-    pagarMercadoPago({
-      title: "Carrito de compras",
-      cantidad: 1,
-      precio: datos.total,
-    }).then((response) => {
-      console.log(response);
-      setIdReference(response.id);
-    });
+    //Obtener referencia de pago llamando al servidor usando la API de mercadopago y guardarla en el estado
   }, []);
 
   return (

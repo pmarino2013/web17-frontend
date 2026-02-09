@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { getCart } from "../helpers/cart";
-import PaymentBtnApp from "./PaymentBtnApp";
+
+//importar peticiones carrito
+//importar componente botón mercadopago
 
 const CartApp = () => {
   const [cart, setCart] = useState({
@@ -9,13 +10,7 @@ const CartApp = () => {
   });
 
   useEffect(() => {
-    getCart().then((response) => {
-      console.log(response);
-      setCart({
-        items: response.items,
-        total: response.total,
-      });
-    });
+    //Traer datos del carrito desde el servidor
   }, []);
 
   return (
@@ -41,7 +36,7 @@ const CartApp = () => {
           <div className="mt-4 font-bold text-lg">Total: ${cart.total}</div>
         </div>
       </div>
-      {cart.items.length > 0 && <PaymentBtnApp datos={cart} />}
+      {/* Si el carrito tiene datos mostrar el botón de mercadopago  */}
     </div>
   );
 };

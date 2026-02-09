@@ -10,7 +10,6 @@ const HomeScreen = () => {
       <p>Esta es la pantalla de inicio</p>
       <LogoutApp />
       <CartApp />
-      {/* <PaymentBtnApp /> */}
     </div>
   );
 };
