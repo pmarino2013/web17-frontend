@@ -3,7 +3,9 @@ import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import { pagarMercadoPago } from "../helpers/payment";
 
 const PaymentBtnApp = ({ datos }) => {
-  initMercadoPago("APP_USR-f3bb0534-996a-4766-8856-4b54b18a81cc");
+  const publicKey = import.meta.env.VITE_MP_PUBLIC_KEY;
+  // initMercadoPago("APP_USR-f3bb0534-996a-4766-8856-4b54b18a81cc");
+  initMercadoPago(publicKey);
 
   const [idReference, setIdReference] = useState(null);
   // Inicializa Mercado Pago con tu Public Key
@@ -32,7 +34,7 @@ const PaymentBtnApp = ({ datos }) => {
       <p>Haz clic en el botón para realizar el pago.</p> */}
       {/* Renderiza el botón de pago */}
       <div style={{ width: "300px" }}>
-        {datos && (
+        {idReference && (
           <Wallet
             initialization={{
               preferenceId: idReference,
