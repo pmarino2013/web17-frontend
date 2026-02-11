@@ -5,9 +5,9 @@ import { pagarMercadoPago } from "../helpers/payment";
 const PaymentBtnApp = ({ datos }) => {
   const [idReference, setIdReference] = useState(null);
   // Inicializa Mercado Pago con tu Public Key
-  // const publicKey = import.meta.env.VITE_MP_PUBLIC_KEY;
-  initMercadoPago("APP_USR-f3bb0534-996a-4766-8856-4b54b18a81cc");
-  // initMercadoPago(publicKey);
+  const publicKey = import.meta.env.VITE_MP_PUBLIC_KEY;
+  // initMercadoPago("APP_USR-f3bb0534-996a-4766-8856-4b54b18a81cc");
+  initMercadoPago(publicKey);
 
   useEffect(() => {
     pagarMercadoPago({
