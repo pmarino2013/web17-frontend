@@ -1,14 +1,14 @@
 import React from "react";
-// import { logOut } from '../helpers/auth'
+// import { logOut } from "../helpers/auth";
 import { useNavigate } from "react-router-dom";
 
 const LogoutApp = () => {
   const navigate = useNavigate();
 
   const cerrarSesion = async () => {
-    // const response=await logOut()
-    // if(response.ok){
-    // navigate('/')
+    // const response = await logOut();
+    // if (response.ok) {
+    //   navigate("/");
     // }
   };
   return (
