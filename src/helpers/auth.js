@@ -15,10 +15,19 @@ const logIn = async (email, password) => {
   return data;
 };
 
+const LogOut = async () => {
+  const response = await fetch(url + "logout", {
+    method: "POST",
+    credentials: "include",
+  });
+  const data = await response.json();
+  return data;
+};
+
 const getPerfil = async () => {
   const response = await fetch(url + "profile");
   const data = await response.json();
   return data;
 };
 
-export { logIn, getPerfil };
+export { logIn, getPerfil, LogOut };

@@ -29,10 +29,14 @@ const UserProvider = ({ children }) => {
       setUser(null);
     }
   };
+
+  const clearUserData = () => {
+    setUser(null);
+  };
   //funcion para cargar datos de usuario desde el backend
 
   return (
-    <UserContext.Provider value={{ user, loadUserData }}>
+    <UserContext.Provider value={{ user, loadUserData, clearUserData }}>
       {children}
     </UserContext.Provider>
   );
