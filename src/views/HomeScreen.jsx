@@ -1,14 +1,22 @@
-import React from 'react'
-import LogoutApp from '../components/LogoutApp'
+import React from "react";
+import LogoutApp from "../components/LogoutApp";
+import PaymentBtnApp from "../components/PaymentBtnApp";
+import CartApp from "../components/CartApp";
+import ProductListApp from "../components/ProductListApp";
+import SearchProductApp from "../components/SearchProductApp";
 
 const HomeScreen = () => {
   return (
-    <div className='flex flex-col items-center justify-center h-screen'>
-        <h1 className='text-6xl' >Bienvenido!😎</h1>
-        <p>Esta es la pantalla de inicio</p>
+    <div className="flex flex-col items-center justify-center">
+      <h1 className="text-6xl">Bienvenido!😎</h1>
+      <p>Esta es la pantalla de inicio</p>
       <LogoutApp />
+      <SearchProductApp />
+      {/* <CartApp /> */}
+      <ProductListApp />
+      {/* <PaymentBtnApp /> */}
     </div>
-  )
-}
+  );
+};
 
-export default HomeScreen
+export default HomeScreen;
