@@ -11,7 +11,7 @@ const HomeScreen = () => {
       <h1 className="text-6xl">Bienvenido!😎</h1>
       <p>Esta es la pantalla de inicio</p>
       <LogoutApp />
-      <SearchProductApp />
+
       {/* <CartApp /> */}
       <ProductListApp />
       {/* <PaymentBtnApp /> */}

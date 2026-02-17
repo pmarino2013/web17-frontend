@@ -12,7 +12,7 @@ const SearchProductApp = () => {
   };
 
   return (
-    <div className="my-5">
+    <div className="my-5 flex gap-2 px-4">
       <input
         type="text"
         name=""
