@@ -1,8 +1,9 @@
 import React from "react";
 import LogoutApp from "../components/LogoutApp";
 import PaymentBtnApp from "../components/PaymentBtnApp";
-import CartApp from "../components/CartApp";
+import CartApp from "../components/cart/CartApp";
 import ProductListApp from "../components/ProductListApp";
+import SearchProductApp from "../components/SearchProductApp";
 
 const HomeScreen = () => {
   return (
@@ -10,6 +11,7 @@ const HomeScreen = () => {
       <h1 className="text-6xl">Bienvenido!😎</h1>
       <p>Esta es la pantalla de inicio</p>
       <LogoutApp />
+
       {/* <CartApp /> */}
       <ProductListApp />
       {/* <PaymentBtnApp /> */}

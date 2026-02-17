@@ -31,7 +31,7 @@ const ProductListApp = () => {
       <h1>Lista de productos</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-3 ">
         {products.map((product) => (
-          <ProductCardApp key={product.id} product={product} />
+          <ProductCardApp key={product._id} product={product} />
         ))}
       </div>
       <div className="flex gap-2">
