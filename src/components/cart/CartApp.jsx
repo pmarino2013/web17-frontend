@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { getCart } from "../helpers/cart";
-import PaymentBtnApp from "./PaymentBtnApp";
+import { getCart } from "../../helpers/cart";
+import PaymentBtnApp from "../PaymentBtnApp";
 
 const CartApp = () => {
   const [cart, setCart] = useState({

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import SearchProductApp from "./SearchProductApp";
+import CartBtnApp from "./cart/CartBtnApp";
 
 const NavBarApp = () => {
   const togleMenu = () => {
@@ -49,6 +50,7 @@ const NavBarApp = () => {
               Perfil
             </NavLink>
             <SearchProductApp />
+            <CartBtnApp />
           </div>
           {/* mobile menu button */}
           <div className="-mr-2 flex items-center sm:hidden">

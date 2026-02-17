@@ -1,7 +1,7 @@
 import React from "react";
 import LogoutApp from "../components/LogoutApp";
 import PaymentBtnApp from "../components/PaymentBtnApp";
-import CartApp from "../components/CartApp";
+import CartApp from "../components/cart/CartApp";
 import ProductListApp from "../components/ProductListApp";
 import SearchProductApp from "../components/SearchProductApp";
 
