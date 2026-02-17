@@ -1,15 +1,17 @@
-import React from "react";
 // import { logOut } from "../helpers/auth";
+import { useContext } from "react";
+import { UserContext } from "../context/UserContext.jsx";
+import { LogOut } from "../helpers/auth.js";
 import { useNavigate } from "react-router-dom";
 
 const LogoutApp = () => {
   const navigate = useNavigate();
+  const { clearUserData } = useContext(UserContext);
 
   const cerrarSesion = async () => {
-    // const response = await logOut();
-    // if (response.ok) {
-    //   navigate("/");
-    // }
+    clearUserData(); // Limpiar datos de usuario en el contexto
+    await LogOut();
+    navigate("/login"); // Redirigir al login después de cerrar sesión
   };
   return (
     <div>

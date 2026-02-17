@@ -1,10 +1,12 @@
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { logIn } from "../helpers/auth";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { UserContext } from "../context/UserContext.jsx";
 import AlertApp from "../components/AlertApp";
 import BtnGoogleSigIn from "../components/BtnGoogleSigIn";
 function LoginScreen() {
+  const { loadUserData } = useContext(UserContext);
   const navigate = useNavigate();
   const [response, setResponse] = useState(null);
 
@@ -19,7 +21,8 @@ function LoginScreen() {
     const response = await logIn(data.email, data.password);
     setResponse(response);
     if (response.ok) {
-      navigate("/home");
+      await loadUserData(); // Cargar datos de usuario después del login exitoso
+      navigate("/");
     }
   };
 
