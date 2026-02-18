@@ -1,22 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { getCart } from "../../helpers/cart";
+import React, { useContext } from "react";
+// import { getCart } from "../../helpers/cart";
+import { CartContext } from "../../context/CartContext";
 import PaymentBtnApp from "../PaymentBtnApp";
 
 const CartApp = () => {
-  const [cart, setCart] = useState({
-    items: [],
-    total: 0,
-  });
-
-  useEffect(() => {
-    getCart().then((response) => {
-      console.log(response);
-      setCart({
-        items: response.items,
-        total: response.total,
-      });
-    });
-  }, []);
+  const { cartItems, total } = useContext(CartContext);
 
   return (
     // crear una tarjeta de carrito con tailwindcss que muestre el nombre del producto, la cantidad y el precio total del carrito
@@ -27,7 +15,7 @@ const CartApp = () => {
             Carrito de compras
           </div>
           <ul className="mt-2 text-gray-500">
-            {cart.items.map((item, index) => (
+            {cartItems.map((item, index) => (
               <li key={index} className="mb-2">
                 <div className="flex justify-between">
                   <span>
@@ -38,10 +26,10 @@ const CartApp = () => {
               </li>
             ))}
           </ul>
-          <div className="mt-4 font-bold text-lg">Total: ${cart.total}</div>
+          <div className="mt-4 font-bold text-lg">Total: ${total}</div>
         </div>
       </div>
-      {cart.items.length > 0 && <PaymentBtnApp datos={cart} />}
+      {cartItems.length > 0 && <PaymentBtnApp total={total} />}
     </div>
   );
 };

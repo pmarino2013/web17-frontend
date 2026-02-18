@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { initMercadoPago, Wallet } from "@mercadopago/sdk-react";
 import { pagarMercadoPago } from "../helpers/payment";
 
-const PaymentBtnApp = ({ datos }) => {
+const PaymentBtnApp = ({ total }) => {
   const [idReference, setIdReference] = useState(null);
   // Inicializa Mercado Pago con tu Public Key
   const publicKey = import.meta.env.VITE_MP_PUBLIC_KEY;
@@ -13,7 +13,7 @@ const PaymentBtnApp = ({ datos }) => {
     pagarMercadoPago({
       title: "Carrito de compras",
       cantidad: 1,
-      precio: datos.total,
+      precio: total,
     }).then((response) => {
       console.log(response);
       setIdReference(response.id);
