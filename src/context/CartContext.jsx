@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { createContext, useState } from "react";
+import { getCart } from "../helpers/cart";
 
 const CartContext = createContext(null);
-const url = "http://localhost:9005/api/cart/";
 
 const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
@@ -15,18 +15,6 @@ const CartProvider = ({ children }) => {
       }
     });
   }, []);
-
-  async function getCart() {
-    try {
-      const resp = await fetch(url, {
-        credentials: "include",
-      });
-      const data = await resp.json();
-      return data;
-    } catch (error) {
-      console.log(error);
-    }
-  }
 
   const addToCart = (item) => {
     setCartItems((prevItems) => [...prevItems, item]);
